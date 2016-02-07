@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('body');
+            $table->decimal('price', 10, 2);
             $table->timestamps();
             $table->timestamp('published_at');
 

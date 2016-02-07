@@ -2,7 +2,7 @@
     <h1>Write a New Article</h1>
     <?php echo $__env->make('articles.back_to_index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <hr/>
-    <?php echo Form::open(['url' => 'articles']); ?>
+    <?php echo Form::open(['url' => 'articles', 'method' => 'POST', 'files' => true]); ?>
 
 
     <?php echo $__env->make('articles.form', ['submitButtonText'=>'Add Article'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

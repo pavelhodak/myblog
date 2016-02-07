@@ -15,6 +15,9 @@ Route::resource('articles', 'ArticlesController');
 //Confirmation page
 Route::get('articles/{id}/delete', 'ArticlesController@delete');
 
+Route::get('/basket','BasketController@show');
+Route::post('/checkout','BasketController@checkout');
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 

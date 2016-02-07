@@ -10,7 +10,8 @@ class Article extends Model
     protected $fillable=[
         'title',
         'body',
-        'published_at'
+        'published_at',
+        'price'
     ];
     protected $dates=[
         'published_at'
@@ -26,8 +27,10 @@ class Article extends Model
         $this->attributes['published_at'] = Carbon::now();
     }
 
-    public function user()
-    {
+    public function user() {
         return $this->belongsTo('App\User');
+    }
+    public function images(){
+        return $this->hasMany('App\Image');
     }
 }
